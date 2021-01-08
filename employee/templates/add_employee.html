@@ -1,0 +1,43 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- bootstrap css files -->
+    <link rel="stylesheet" href="{% static 'css/bootstrap-grid.css' %}">
+    <link rel="stylesheet" href="{% static 'css/bootstrap-grid.css.map' %}">
+    <link rel="stylesheet" href="{% static 'css/bootstrap-grid.min.css.map' %}">
+    <link rel="stylesheet" href="{% static 'css/bootstrap-grid-min-css' %}">
+    <link rel="stylesheet" href="{% static 'css/bootstrap-reboot.css' %}">
+    <link rel="stylesheet" href="{% static 'css/bootstrap-reboot.css.map' %}">
+    <link rel="stylesheet" href="{% static 'css/bootstrap-reboot.min.css' %}">
+    <link rel="stylesheet" href="{% static 'css/bootstrap-reboot.min.css.map' %}">
+    <link rel="stylesheet" href="{% static 'css/bootstrap.css' %}">
+    <link rel="stylesheet" href="{% static 'css/bootstrap.css.map' %}">
+    <link rel="stylesheet" href="{% static 'css/bootstrap.min.css' %}">
+    <link rel="stylesheet" href="{% static 'css/bootstrap.min.css.map' %}">
+    <title>Employee</title>
+</head>
+
+<body>
+    
+    <div class="container mt-5">
+        <form class="m-auto w-100 bg-info text-center p-3" id="form" method="POST">
+            <h1 id="name">{{ dev }}</h1>
+            {% if messages %}
+                {% for message in messages %}
+                    <p class="text-light border">{{ message }}</p>
+                {% endfor %}
+            {% endif %}
+            {% csrf_token %}
+            {{ form.as_p }}
+            <input type="submit" value="Add Employee" class="btn btn-success m-auto border">
+        </form>
+    </div>
+
+    <!-- javascript files -->
+    <script src="{% static 'js/add_employee.js' %}"></script>
+
+</body>
+</html>

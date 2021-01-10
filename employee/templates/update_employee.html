@@ -1,0 +1,27 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- bootstrap css files -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <title>Employee</title>
+</head>
+
+<body>
+    
+    <div class="container mt-5">
+        <form class="m-auto w-100 bg-info text-center p-3 rounded" id="form" method="POST">
+            {% csrf_token %}
+            <h1 class="mb-5">Employees Management</h1>
+            {{ form.as_p }}
+            <input type="submit" value="Update Employee info" id="add" class="btn btn-success m-auto border">
+        </form>
+    </div>
+
+    <!-- javascript files -->
+    <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+    <!-- <script src="{% static 'js/add_employee.js' %}"></script> -->
+</body>
+</html>

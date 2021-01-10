@@ -8,13 +8,15 @@ class EmployeeForm(forms.ModelForm):
             attrs={
                 'class': 'btn btn-success border border-light text-left',
                 # 'id':'first_name'
+                'placeholder': 'Your First Name'
             }
         )
     )
     last_name = forms.CharField(
         widget=forms.TextInput(
             attrs={
-                'class': 'btn btn-success border border-light text-left'
+                'class': 'btn btn-success border border-light text-left',
+                'placeholder': 'Your Last Name'
             }
         )
     )
